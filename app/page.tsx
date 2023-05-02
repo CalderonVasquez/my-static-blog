@@ -12,10 +12,11 @@ const getPostMetadata = () => {
 const HomePage = () => {
     const postMetadata = getPostMetadata();
     const postPreviews = postMetadata.map((slug) => (
-        
-            <Link href={`/posts/${slug}`}>
-                <h2>{slug}</h2>
-            </Link>
+      <div>
+        <Link href={`/posts/${slug}`}>
+          <h2>{slug}</h2>
+        </Link>
+      </div>         
     ))
 
   return (
