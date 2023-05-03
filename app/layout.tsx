@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import "styles/globals.css"
 
 export const metadata = {
   title: "Eric's, Blog",
@@ -15,7 +16,7 @@ export default function RootLayout({
      <header>
        <div>
         <Link href="/">
-            <h1>Eric's Blog</h1>
+            <h1 className="text-3xl text-blue-500 underline">Eric's Blog</h1>
         </Link> 
         <p>Welcome to my Blog!</p>
         <br />
@@ -35,9 +36,11 @@ export default function RootLayout({
   return (
     <html lang="en"> 
       <body>
-        {header}
-        {children}
-        {footer}
+        <div className='mx-auto max-w-2xl'>
+          {header}
+          {children}
+          {footer}
+        </div>
       </body>   
     </html>
   )
