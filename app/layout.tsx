@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import "styles/globals.css"
 
@@ -13,20 +14,20 @@ export default function RootLayout({
   }) {
   
   const header = (
-     <header>
-       <div>
+     <header className='text-center font-bold bg-slate-800 p-8 my-6 rounded-md'>
+      <div>
+        <Image src="/logo.png" alt="Eric's Blog" width={40} height={40} className='mx-auto' />
         <Link href="/">
-            <h1 className="text-3xl text-blue-500 underline">Eric's Blog</h1>
+            <h1 className="text-2xl text-white font-bold mt-4">Eric's Blog</h1>
         </Link> 
-        <p>Welcome to my Blog!</p>
-        <br />
+        <p className='text-slate-300'>Welcome to my Blog!</p>
       </div>
      </header>
   )
 
    const footer = (
      <footer>
-       <div>
+       <div className='border-t border-slate-400 text-center text-slate-400 mt-12 py-6'>
          <br />
          <p>Made by E. Marshall 2023</p>
       </div>
@@ -36,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en"> 
       <body>
-        <div className='mx-auto max-w-2xl'>
+        <div className='mx-auto max-w-2xl px-6'>
           {header}
           {children}
           {footer}
